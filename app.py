@@ -22,3 +22,6 @@ def start_dos(url, num_requests):
             print(f"Request failed: {e}")
         time.sleep(0.1)
 
+@app.errorhandler(Exception)
+def handle_error(e):
+    return f"Internal Error: {str(e)}", 500
